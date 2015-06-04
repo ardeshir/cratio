@@ -1,7 +1,7 @@
 // cratio.c
 #include <stdio.h>
 
-typedef strut {
+typedef struct {
 	int num, den;
 	double value;
 } ratio;
