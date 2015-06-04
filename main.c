@@ -7,7 +7,7 @@ typedef struct {
 } ratio;
 
 ratio new(int num, int den) {
-	retrun (ratio){.num=num, .den=den, .value=num/(double)den};
+	return (ratio){.num=num, .den=den, .value=num/(double)den};
 }
 
 void print_r(ratio r) {
