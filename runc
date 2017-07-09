@@ -15,4 +15,4 @@ gcc -Wall ${FILE}\.c -o $FILE
 
 chmod +x ./$FILE
 
-./$FILE
+echo "$FILE has been compiled"

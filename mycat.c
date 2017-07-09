@@ -36,34 +36,34 @@ int process(char *file) {
     char buffer[BUFSIZ];
     int errors = 0;
     
-    if( strcmp(file, "-") == 0)
+    if( strcmp(file, "-") == 0 )
        fd = 0;
-    else if ((fd = open(file, O_RDONLY)) < 0 ) {
-        fprintf(stderr, "%s: %s: cannot open for reading: %s\n", 
-                myname, file, strerror(errno));
+    else if ( (fd = open(file, O_RDONLY) ) < 0 ) {
+        fprintf( stderr, "%s: %s: cannot open for reading: %s\n", 
+                myname, file, strerror(errno) );
         return 1;
     }
     
-    while ((rcount = read(fd, buffer, sizeof buffer)) > 0 ) {
-        wcount = write(1, buffer, rcount);
-        if(wcount != rcount) {
-            fprintf(stderr, "%s: %s: write error: %s\n",
-                    myname, file, strerror(errno));
+    while ( (rcount = read(fd, buffer, sizeof buffer) ) > 0 ) {
+        wcount = write( 1, buffer, rcount );
+        if( wcount != rcount ) {
+            fprintf( stderr, "%s: %s: write error: %s\n",
+                     myname, file, strerror(errno) );
             errors++;
             break;
         }
     }
 
-    if(rcount < 0) {
-        fprintf(stderr, "%s: %s: read error: %s\n",
-                myname, file, strerror(errno));
+    if( rcount < 0 ) {
+        fprintf( stderr, "%s: %s: read error: %s\n",
+                 myname, file, strerror(errno) );
         errors++;
     }
     
-    if(fd != 0 ){
-        if(close(fd) < 0 ) {
-            fprintf(stderr, "%s: %s: close error: %s\n",
-                    myname, file, strerror(errno));
+    if( fd != 0 ){
+        if( close(fd) < 0 ) {
+            fprintf( stderr, "%s: %s: close error: %s\n",
+                     myname, file, strerror(errno) );
             errors++;
         }
     }
