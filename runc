@@ -3,7 +3,7 @@
 FILE=$1
 
 function help {
-    echo "usage: ${0} <month> <search>"
+    echo "usage: ${0} <source>"
     exit 1 
 }
 

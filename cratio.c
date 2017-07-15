@@ -26,12 +26,15 @@ ratio add(ratio left, ratio right) {
 int main(){
 	ratio twothirds = new(2,3);
 	ratio quarter= new(1,4);
-        print_r(twothirds);
+    
+    print_r(twothirds);
 	print_r(quarter);
 	print_r(add(twothirds,quarter));
 
-        printf("\nUse of sizeof(x): \n");
+    printf("\nUse of sizeof(x): \n");
 	printf("size of two ints: %zu\n", 2*sizeof(int));
 	printf("size of a double: %zu\n", sizeof(double));
 	printf("size of a ratio struct: %zu\n", sizeof(ratio));
+	
+	return 0;
 }
